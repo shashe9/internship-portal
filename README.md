@@ -2,6 +2,10 @@
 
 A simple, clean, and lightweight web application built for a student assignment. It allows users to apply for internships by submitting their details and a PDF resume, and includes an admin dashboard to review applications and update their statuses.
 
+## Live Demo
+[Open Application](https://internship-portal-noq4.onrender.com)
+
+
 ## Features
 
 ### UI & UX Improvements
