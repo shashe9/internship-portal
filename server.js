@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 3000;
 
 // simple session configuration for authentication
 app.use(session({
-    secret: 'internship-portal-secret-key', // in a real app, use environment variables
+    secret: 'simple-secret-key',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: { secure: false } // secure: false since we're testing on localhost (no https)
 }));
 
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // serve frontend files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 // use api routes
 app.use('/api', apiRoutes);

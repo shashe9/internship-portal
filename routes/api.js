@@ -16,7 +16,7 @@ function checkAdminAuth(req, res, next) {
 // configure multer for secure file uploads
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/');
+        cb(null, path.join(__dirname, '../uploads'));
     },
     filename: function (req, file, cb) {
         // rename file to avoid overwriting: timestamp + random number
