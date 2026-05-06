@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Application Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for simple icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-briefcase"></i> Internship Portal</h1>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Apply Now</h2>
+            
+            <div id="messageBox" class="message"></div>
+
+            <form id="applicationForm" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <!-- Personal Info Group -->
+                    <div class="input-group">
+                        <label for="name">Full Name <span style="color:#e74c3c">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="John Doe">
+                        <div class="field-error" id="nameError"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address <span style="color:#e74c3c">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com">
+                        <div class="field-error" id="emailError"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number <span style="color:#e74c3c">*</span></label>
+                        <input type="text" id="phone" name="phone" placeholder="e.g. +1 234 567 8900">
+                        <div class="field-error" id="phoneError"></div>
+                    </div>
+
+                    <!-- Education Group -->
+                    <div class="input-group">
+                        <label for="college">College / University <span style="color:#e74c3c">*</span></label>
+                        <input type="text" id="college" name="college" placeholder="University Name">
+                        <div class="field-error" id="collegeError"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="year">Year of Study <span style="color:#e74c3c">*</span></label>
+                        <select id="year" name="year">
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                            <option value="Graduated">Graduated</option>
+                        </select>
+                        <div class="field-error" id="yearError"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="skills">Key Skills (comma separated) <span style="color:#e74c3c">*</span></label>
+                        <input type="text" id="skills" name="skills" placeholder="JavaScript, HTML, CSS">
+                        <div class="field-error" id="skillsError"></div>
+                    </div>
+
+                    <!-- Links Group -->
+                    <div class="input-group">
+                        <label for="linkedin">LinkedIn Profile (Optional)</label>
+                        <input type="text" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="portfolio">Portfolio / GitHub (Optional)</label>
+                        <input type="text" id="portfolio" name="portfolio" placeholder="https://github.com/username">
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="input-group full-width">
+                        <label for="resume">Upload Resume (PDF only, max 2MB) <span style="color:#e74c3c">*</span></label>
+                        <input type="file" id="resume" name="resume" accept="application/pdf">
+                        <div class="field-error" id="resumeError"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" id="submitBtn"><i class="fas fa-paper-plane"></i> Submit Application</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="admin-login.html" class="nav-link"><i class="fas fa-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Internship Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-chart-line"></i> Admin Dashboard</h1>
+        <button id="logoutBtn" class="btn btn-danger btn-small"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </header>
+
+    <div class="container" style="max-width: 1200px;">
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <div class="value" id="statTotal">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <div class="value" id="statPending" style="color: #b3b3b3;">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Selected</h3>
+                <div class="value" id="statSelected" style="color: #2ecc71;">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Rejected</h3>
+                <div class="value" id="statRejected" style="color: #e74c3c;">-</div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="dashboard-controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search by name or email...">
+            
+            <select id="statusFilter" class="filter-box">
+                <option value="All">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <select id="sortSelect" class="filter-box">
+                <option value="dateDesc">Newest First</option>
+                <option value="dateAsc">Oldest First</option>
+                <option value="nameAsc">Name (A-Z)</option>
+                <option value="nameDesc">Name (Z-A)</option>
+                <option value="status">Status</option>
+            </select>
+        </div>
+
+        <div id="loading"><i class="fas fa-spinner fa-spin"></i> Loading applications...</div>
+        
+        <div id="messageBox" class="message"></div>
+
+        <div class="table-container">
+            <p style="color: #b3b3b3; margin-bottom: 1rem; font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Click a row or use 'Details' to view full application</p>
+            <table id="applicationsTable" class="hidden">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>College</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- table rows will be populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for Full Details -->
+    <div class="modal-overlay" id="detailsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h2>Applicant Details</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- details will be populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
